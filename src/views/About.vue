@@ -32,7 +32,7 @@ import * as mutations from '@/graphql/mutations'
 import * as queries from '@/graphql/queries'
 
 export default {
-  name: 'todo',
+  name: 'about',
     data: function () {
     return {
       input: {
