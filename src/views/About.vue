@@ -50,15 +50,11 @@ export default {
     createTodo: async function () {
       if (this.input.name !== '' || this.input.description !== '') {
         await API.graphql(graphqlOperation(mutations.createTodo, {input: this.input}))
-         .catch(err => console.error(err))
         await this.listTodos()
-      } else {
-        console.info('input empty')
       }
     },
     listTodos: async function () {
       const res = await API.graphql(graphqlOperation(queries.listTodos))
-        .catch(err => console.error(err))
       this.todos = res.data.listTodos.items
     }
   }
